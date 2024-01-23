@@ -1,2 +1,2 @@
 Lecture 1 Recording
-(Monday 18th Jan)
+(Thursday 18th Jan)
