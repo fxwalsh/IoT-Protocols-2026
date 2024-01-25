@@ -1,3 +1,3 @@
 # Sensors, Actuators and PT
 
-Sensor Types · MIoT in Packet Tracer 
+Sensor Types · IoT in Packet Tracer 
