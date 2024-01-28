@@ -1,2 +1,0 @@
-# Packet Tracer Lab Solution
-
