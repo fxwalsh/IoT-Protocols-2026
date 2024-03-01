@@ -9,7 +9,7 @@
 from urllib.request import urlopen
 import  json
 import  time
-from sense_hat import SenseHat
+#from sense_hat import SenseHat
 from dotenv import dotenv_values
 
 #load configuration values from .env file
@@ -17,7 +17,7 @@ config = dotenv_values(".env")
 baseURL="https://api.thingspeak.com/update?api_key=" + config["apiWriteKey"]
 
 interval = int(config["transmissionInterval"])
-sense = SenseHat()
+#sense = SenseHat()
 
 def writeData(temp):
     # Sending the data to thingspeak in the query string
@@ -28,6 +28,6 @@ def writeData(temp):
     conn.close()
 
 while True:
-    temp=round(sense.get_temperature(),2)
+    temp=round(20.222,2)
     writeData(temp)
     time.sleep(interval)
