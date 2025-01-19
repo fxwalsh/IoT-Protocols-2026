@@ -1,3 +1,0 @@
-# Proposal Template
-
-markdown · pdf

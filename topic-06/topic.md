@@ -1,3 +1,0 @@
-# IOT Platforms
-
-Thingspeak · Blynk

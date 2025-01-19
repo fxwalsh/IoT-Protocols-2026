@@ -1,3 +1,0 @@
-Video Recording
-
-Project Introduction
