@@ -1,0 +1,77 @@
+## Use the ZeRGBa
+
+Lets replace the button with a more interactive way of controlling the LED matrix.
+
++ Now, as before, open the ``Widget Box`` and add the ``zeRGBra`` widget. Your app should look like this:
+
+![zeRGBra](C:\Users\Frank\Desktop\repos\2021\computer-systems-2021\topic-09-week9\unit1\book-a\img\zergbra.png)
+
++ Double tab the zeRGBra widget and configure as follows:
+  + Set the Output to Merge. This sends all values out on the one pin(as an array)
+  + Set pin to Virtual Pin 1 (V1)
+
+![zeRGBra](C:\Users\Frank\Desktop\repos\2021\computer-systems-2021\topic-09-week9\unit1\book-a\img\zergbra2.png)
+
++ Now, in ``blynk.py`` on the RPi, replace the ``def write_virtual_pin_handler(...`` function with the following code:
+
+```python
+# register handler for virtual pin V1 write event
+@blynk.handle_event('write V1')
+def write_virtual_pin_handler(pin, value):
+    print('V1:'+ str(value))
+    r=int(value[0]) # or you could do this: value = list(map(int, value))
+    g=int(value[1])
+    b=int(value[2])
+    sense.clear(r,g,b)
+```
+
+The above write callback converts the array of rgb values written by the zeRGBra widget to numeric(integers) and passes the values to the sensehat leds.
+
++ Start the Blynk service on the RPi by entering ``pyhton3 blynk.py `` at the command prompt. 
++ Run the Blynk Phone app again. You should now be able to set the colour of the LEDs using the zeRGBra!
+
+OPTIONAL: Phone Sensors
+
+**NOTE: The following sections were tested using an Android Device (Samsung Galaxy). Blynk is designed to be cross platform but some variations in operation, particularly when integrating with phone sensors, may exist on different phone models. You can also try this section on an emulated smartphone.**
+
+Blynk has lots of widgets for various uses. The phone app also allow you to access the phones sensors such a light sensor, accelerometer. The next example will use use a ``webhook`` to push  light sensor data to Thingspeak for analysis.
+
++ On your phone, stop the Blynk app if it's running.
++ As in previous steps, open the Widget Box and add the ``Light Sensor`` to your app (you'll need to scroll down to find it).
++ Double-tap on the light sensor widget to open the settings and configure as follows:
+    + Set the output pin to Virtual V3
+    + Set the write interval to 1 second
+
++ Run the Blynk app on your phone, you should see lux (light measurement) values for light intensity in the widget. The light sensor is usually at the top of the phone. Cover it with your hand and you should see the able drop. 
++ Now, on the RPi, we'll use the lux values to test if it's too dark (<50 lux).
++ On the Raspberry Pi, stop the Blynk Node app and make the following changes to ``blynk.py``:
+
++ Add the following call back function for ``V3`` at the end of ``blynk.py`` to handle Virtual Pin 3 (i.e. the one that's linked to the light sensor)
+
+```python
+# register handler for virtual pin V3(light sensor) write event
+@blynk.handle_event('write V3')
+def write_virtual_pin_handler(pin, value):
+    print('V3:'+ str(value))
+    if int(value[0])<50:
+        print('It is a bit Dark!')
+
+```
+
++ Now run the pyhton program as before and the phone app. You should now be able to get the RPi to display the "It's too dark" message on the console by covering the light sensor on your phone with your hand. The threshold is set to 50 for switching on/off. Depending on your phone and sensor values you may need to adjust the threshold value (50) used in the code to make it work.
+
+```text
+
+        ___  __          __
+       / _ )/ /_ _____  / /__
+      / _  / / // / _ \/  '_/
+     /____/_/\_, /_//_/_/\_\
+            /___/ for Python v0.2.6
+
+V2 Read: 34.73
+V3:['81']
+V3:['80']
+V3:['3']
+It is a bit Dark!
+```
+

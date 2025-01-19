@@ -1,0 +1,87 @@
+# Data Persistence
+
+You are producing data, but it's not persisted as of yet. You may need to access historical data at a later data for various reasons such as analytics, functional or regulatory reasons.
+Some online MQTT brokers offer a window of historical data but will probably lack the ability to extensively query the data.
+In this section you will now build a simple data acquisition process to persist your data both locally and remotely and use Web APIs to access that data.
+MQTT is now "moving" the data from a temperature sensor to a message broker. We can now write a data aquisition program to move that data into a DB. 
+
+![Data Acquisition and Persistence](./img/broker.png)
+
+## Store temperature data on the DBServer
+
+Lets assume that your RPi is some remote connected device connected to the internet and the DBServer will function as your DB host. Remember, the DBServer is not routed to the internet, but the WebServer is. 
+
+
+### Create DB Table
+
++ Start up the solution to last weeks lab(``vagrant up``). You can find a solution here.
++ Create a SSH session with the WebServer (``vagrant ssh webserver``)
++ Like you did in a similar lab, create a db and table to store the sensor data in MYSQL on the dbserver(ip address 10.0.1.130).
+
+~~~bash
+vagrant@webserver:~$ mysql -uroot  -h10.0.1.130 -e "CREATE DATABASE myDB"
+vagrant@webserver:~$ mysql -uroot -h10.0.1.130 -e "CREATE TABLE myDB.Temperature (temperature DECIMAL(5,2), timestamp TIMESTAMP"
+~~~
+
+This basic table will be used to persist the temperature data.
+
+### Create MQTT Subscriber script
+
++ Install **Mosquitto** and **Mosquitto clients**:
+
+~~~bash
+sudo apt-get update
+sudo apt-get install mosquitto
+sudo apt-get install mosquitto-clients
+~~~
+
++ The sensor data is JSON format. We could use ``awk`` and ``sed`` to parse it but it's easier to use a proper JSON parser, [jq](https://stedolan.github.io/jq/).
+
+~~~bash
+sudo apt-get install jq
+~~~
+
++ Create a directory called ``mqtt`` in the home directory and create a file called ``client-sub.sh`` with the following contents:
+
+~~~bash
+#!/bin/bash
+echo "subscriber started"
+mosquitto_sub -h test.mosquitto.org -t 'fxwalsh/home/temperature'  | while read SENSOR_DATA
+do
+echo  $SENSOR_DATA
+TEMP=$(jq '.temperature' <<< "$SENSOR_DATA")
+TS=$(jq '.timestamp' <<< "$SENSOR_DATA")
+mysql -h 10.0.1.130  -uroot -e "insert into myDB.Temperature(timestamp,temperature) VALUES(from_unixtime($TS),'$TEMP');"
+
+done
+~~~
+
+This is not a great script as we've hardcoded the DB IP address and the Broker domain name into the script. However, for demo purposes, it's fine for now. 
+
+Examine the above script. ``mosquitto_sub``, part of the mosquitto_clients package, allows you to specify a host (``-h``) and topic (``-t``) and the results are piped to a while loop for processing. The ``SENSOR_DATA`` is then parsed using ``jq`` to extract the temperature and timestamp. The data is then inserted into the DB.
+
++ Make the script executable and run it as follows. All going well, it should start persisting published data to myDB.Temperature
+
+~~~bash
+vagrant@webserver:~$ chmod +x client-sub.sh
+vagrant@webserver:~$ ./client-sub.sh
+subscriber started
+{"timestamp": 1571821857.281637, "temperature": 38.34}
+~~~
+
++ Query the db table, you should see data from the sensor:
+
+~~~bash
+vagrant@webserver:~$ mysql -uroot -h10.0.1.130 -e "select * from myDB.Temperature"
++-------------+---------------------+
+| temperature | timestamp           |
++-------------+---------------------+
+|          40 | 2019-10-23 09:33:52 |
+|          40 | 2019-10-23 09:34:07 |
++-------------+---------------------+
+~~~
+
+## Report Requirements - Data Persistance
+
++ Provide a screenshot of both ``client-sub.sh`` executing and the results of running ``mysql -uroot -h10.0.1.130 -e "select * from myDB.Temperature"``
++ If you are unable to execute the script, please provide any error messages shown.
