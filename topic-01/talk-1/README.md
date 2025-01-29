@@ -1,8 +1,7 @@
-# Introduction to IoT
+# IoT Standards & Protocols
 
+Module Intro
 
-
-## Introduction
 
 This lesson covers some of the introductory topics around the Internet of Things, and gets you going setting up your hardware.
 

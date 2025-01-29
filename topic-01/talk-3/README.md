@@ -1,8 +1,6 @@
-# Interact with the physical world with sensors and actuators
+# Sensors and Actuators
 
-
-
-## Introduction
+Analog and Digital Sensors/Actuators
 
 This lesson introduces two of the important concepts for your IoT device - sensors and actuators. You will also get hands on with them both, adding a light sensor to your IoT project, then adding an LED controlled by light levels, effectively building a nightlight.
 

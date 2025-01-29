@@ -1,6 +1,6 @@
-# A deeper dive into IoT
+# IoT Introduction
 
-![A sketchnote overview of this lesson](../../../sketchnotes/lesson-2.jpg)
+Introduction to IoT
 
 ## Introduction
 
