@@ -1,3 +1,0 @@
-# Raspberry Pi
-
-Connecting · SenseHAT

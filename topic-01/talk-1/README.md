@@ -1,20 +1,6 @@
 # Introduction to IoT
 
-![A sketchnote overview of this lesson](../../../sketchnotes/lesson-1.jpg)
 
-> Sketchnote by [Nitya Narasimhan](https://github.com/nitya). Click the image for a larger version.
-
-This lesson was taught as part of the [Hello IoT series](https://youtube.com/playlist?list=PLmsFUfdnGr3xRts0TIwyaHyQuHaNQcb6-) from the [Microsoft Reactor](https://developer.microsoft.com/reactor/?WT.mc_id=academic-17441-jabenn). The lesson was taught as 2 videos - a 1 hour lesson, and a 1 hour office hour diving deeper into parts of the lesson and answering questions.
-
-[![Lesson 1: Introduction to IoT](https://img.youtube.com/vi/bVFfcYh6UBw/0.jpg)](https://youtu.be/bVFfcYh6UBw)
-
-[![Lesson 1: Introduction to IoT - Office hours](https://img.youtube.com/vi/YI772q5v3yI/0.jpg)](https://youtu.be/YI772q5v3yI)
-
-> 🎥 Click the images above to watch the videos
-
-## Pre-lecture quiz
-
-[Pre-lecture quiz](https://black-meadow-040d15503.1.azurestaticapps.net/quiz/1)
 
 ## Introduction
 
@@ -94,16 +80,6 @@ Like a microcontroller, single-board computers have a CPU, memory and input/outp
 
 Single-board computers are fully-featured computers, so can be programmed in any language. IoT devices are typically programmed in Python.
 
-### Hardware choices for the rest of the lessons
-
-All the subsequent lessons include assignments using an IoT device to interact with the physical world and communicate with the cloud. Each lesson supports 3 device choices - Arduino (using a Seeed Studios Wio Terminal), or a single-board computer, either a physical device (a Raspberry Pi 4) or a virtual single-board computer running on your PC or Mac.
-
-You can read about the hardware needed to complete all the assignments in the [hardware guide](../../../hardware.md).
-
-> 💁 You don't need to purchase any IoT hardware to complete the assignments, you can do everything using a virtual single-board computer.
-
-Which hardware you choose is up to you - it depends on what you have available either at home on in your school, and what programming language you know or plan to learn. Both hardware variants will use the same sensor ecosystem, so if you start down one path, you can change to the other without having to replace most of the kit. The virtual single-board computer will be the equivalent of learning on a Raspberry Pi, with most of the code transferrable to the Pi if you eventually get a device and sensors.
-
 ### Arduino developer kit
 
 If you are interested in learning microcontroller development, you can complete the assignments using an Arduino device. You will need a basic understanding of C/C++ programming, as the lessons will only teach code that is relevant to the Arduino framework, the sensors and actuators being used, and the libraries that interact with the cloud.
@@ -126,20 +102,6 @@ The assignments will use [Visual Studio Code](https://code.visualstudio.com/?WT.
 If you are using a Raspberry Pi, you can either run your Pi using the full desktop version of Raspberry Pi OS, and do all the coding directly on the Pi using [the Raspberry Pi OS version of VS Code](https://code.visualstudio.com/docs/setup/raspberry-pi?WT.mc_id=academic-17441-jabenn), or run your Pi as a headless device and code from your PC or Mac using VS Code with the [Remote SSH extension](https://code.visualstudio.com/docs/remote/ssh?WT.mc_id=academic-17441-jabenn) that allows you to connect to your Pi and edit, debug and run code as if you were coding on it directly.
 
 If you use the virtual device option, you will code directly on your computer. Instead of accessing sensors and actuators, you will use a tool to simulate this hardware providing sensor values that you can define, and showing the results of actuators on screen.
-
-## Set up your device
-
-Before you can get started with programming your IoT device, you will need to do a small amount of setup. Follow the relevant instructions below depending on which device you will be using.
-
-> 💁 If you don't have a device yet, refer to the [hardware guide](../../../hardware.md) to help decide which device you are going to use, and what additional hardware you need to purchase. You don't need to purchase hardware, as all the projects can be run on virtual hardware.
-
-These instructions do include links to third-party websites from the creators of the hardware or tools you will be using. This is to ensure you are always using the most up-to-date instructions for the various tools and hardware.
-
-Work through the relevant guide to set your device up and complete a 'Hello World' project. This will be the first step in creating an IoT nightlight over the 4 lessons in this getting started part.
-
-* [Arduino - Wio Terminal](wio-terminal.md)
-* [Single-board computer - Raspberry Pi](pi.md)
-* [Single-board computer - Virtual device](virtual-device.md)
 
 ✅ You will be using VS Code for both Arduino and Single-board computers. If you haven't used this before, read more about it on the [VS Code site](https://code.visualstudio.com?WT.mc_id=academic-17441-jabenn)
 
@@ -210,10 +172,6 @@ All these types of devices have sensors and/or actuators and talk to the Interne
 ## 🚀 Challenge
 
 List as many IoT devices as you can that are in your home, school or workplace - there may be more than you think!
-
-## Post-lecture quiz
-
-[Post-lecture quiz](https://black-meadow-040d15503.1.azurestaticapps.net/quiz/2)
 
 ## Review & Self Study
 

@@ -1,20 +1,6 @@
 # Interact with the physical world with sensors and actuators
 
-![A sketchnote overview of this lesson](../../../sketchnotes/lesson-3.jpg)
 
-> Sketchnote by [Nitya Narasimhan](https://github.com/nitya). Click the image for a larger version.
-
-This lesson was taught as part of the [Hello IoT series](https://youtube.com/playlist?list=PLmsFUfdnGr3xRts0TIwyaHyQuHaNQcb6-) from the [Microsoft Reactor](https://developer.microsoft.com/reactor/?WT.mc_id=academic-17441-jabenn). The lesson was taught as 2 videos - a 1 hour lesson, and a 1 hour office hour diving deeper into parts of the lesson and answering questions.
-
-[![Lesson 3: Interact with the Physical World with Sensors and Actuators](https://img.youtube.com/vi/Lqalu1v6aF4/0.jpg)](https://youtu.be/Lqalu1v6aF4)
-
-[![Lesson 3: Interact with the Physical World with Sensors and Actuators - Office hours](https://img.youtube.com/vi/qR3ekcMlLWA/0.jpg)](https://youtu.be/qR3ekcMlLWA)
-
-> 🎥 Click the images above to watch the videos
-
-## Pre-lecture quiz
-
-[Pre-lecture quiz](https://black-meadow-040d15503.1.azurestaticapps.net/quiz/5)
 
 ## Introduction
 
@@ -202,9 +188,7 @@ The challenge in the last two lessons was to list as many IoT devices as you can
 
 For every device you listed, what sensors and actuators are they connected to? What is the purpose of each sensor and actuator connected to these devices?
 
-## Post-lecture quiz
 
-[Post-lecture quiz](https://black-meadow-040d15503.1.azurestaticapps.net/quiz/6)
 
 ## Review & Self Study
 
@@ -212,6 +196,3 @@ For every device you listed, what sensors and actuators are they connected to? W
 * Read about the different types of temperature sensors on the [Seeed Studios Temperature Sensors guide](https://www.seeedstudio.com/blog/2019/10/14/temperature-sensors-for-arduino-projects/)
 * Read about LEDs on the [Wikipedia LED page](https://wikipedia.org/wiki/Light-emitting_diode)
 
-## Assignment
-
-[Research sensors and actuators](assignment.md)

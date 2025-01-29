@@ -6,7 +6,7 @@ auth           : 0
 llm       : 2 
 ignore    :
 - topic-000-Assessments
-- topic-02
+#- topic-02
 - topic-03
 - topic-04
 - topic-05

@@ -1,3 +1,3 @@
-# 02: Raspberry Pi Intro
+# 02: Connecting Devices
 
-Single Board Computer(SBC) · Microcontroller(μC)
+MQTT · Telemetry · Commands

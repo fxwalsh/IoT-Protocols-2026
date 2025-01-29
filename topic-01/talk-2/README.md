@@ -2,20 +2,6 @@
 
 ![A sketchnote overview of this lesson](../../../sketchnotes/lesson-2.jpg)
 
-> Sketchnote by [Nitya Narasimhan](https://github.com/nitya). Click the image for a larger version.
-
-This lesson was taught as part of the [Hello IoT series](https://youtube.com/playlist?list=PLmsFUfdnGr3xRts0TIwyaHyQuHaNQcb6-) from the [Microsoft Reactor](https://developer.microsoft.com/reactor/?WT.mc_id=academic-17441-jabenn). The lesson was taught as 2 videos - a 1 hour lesson, and a 1 hour office hour diving deeper into parts of the lesson and answering questions.
-
-[![Lesson 2: A deeper dive into IoT](https://img.youtube.com/vi/t0SySWw3z9M/0.jpg)](https://youtu.be/t0SySWw3z9M)
-
-[![Lesson 2: A deeper dive into IoT - Office hours](https://img.youtube.com/vi/tTZYf9EST1E/0.jpg)](https://youtu.be/tTZYf9EST1E)
-
-> 🎥 Click the images above to watch the videos
-
-## Pre-lecture quiz
-
-[Pre-lecture quiz](https://black-meadow-040d15503.1.azurestaticapps.net/quiz/3)
-
 ## Introduction
 
 This lesson dives deeper into some of the concepts covered in the last lesson.
@@ -32,13 +18,11 @@ The two components of an IoT application are the *Internet* and the *thing*. Let
 
 ### The Thing
 
-![A Raspberry Pi 4](../../../images/raspberry-pi-4.jpg)
+
 
 The **Thing** part of IoT refers to a device that can interact with the physical world. These devices are usually small, low-priced computers, running at low speeds and using low power - for example, simple microcontrollers with kilobytes of RAM (as opposed to gigabytes in a PC) running at only a few hundred megahertz (as opposed to gigahertz in a PC), but consuming sometimes so little power they can run for weeks, months or even years on batteries.
 
 These devices interact with the physical world, either by using sensors to gather data from their surroundings or by controlling outputs or actuators to make physical changes. The typical example of this is a smart thermostat - a device that has a temperature sensor, a means to set a desired temperature such as a dial or touchscreen, and a connection to a heating or cooling system that can be turned on when the temperature detected is outside the desired range. The temperature sensor detects that the room is too cold and an actuator turns the heating on.
-
-![A diagram showing temperature and a dial as inputs to an IoT device, and control of a heater as an output](../../../images/basic-thermostat.png)
 
 There are a huge range of different things that can act as IoT devices, from dedicated hardware that senses one thing, to general purpose devices, even your smartphone! A smartphone can use sensors to detect the world around it, and actuators to interact with the world - for example using a GPS sensor to detect your location and a speaker to give you navigation instructions to a destination.
 
@@ -103,14 +87,6 @@ Microcontrollers have much lower clock speeds than desktop or laptop computers, 
 Each clock cycle draws power and generates heat. The faster the ticks, the more power consumed and more heat generated. PC's have heat sinks and fans to remove heat, without which they would overheat and shut down within seconds. Microcontrollers often have neither as they run much cooler and therefore much slower. PC's run off mains power or large batteries for a few hours, microcontrollers can run for days, months, or even years off small batteries. Microcontrollers can also have cores that run at different speeds, switching to slower low power cores when the demand on the CPU is low to reduce power consumption.
 
 > 💁 Some PCs and Macs are adopting the same mix of fast high power cores and slower low power cores, switching to save battery. For example, the M1 chip in the latest Apple laptops can switch between 4 performance cores and 4 efficiency cores to optimize battery life or speed depending on the task being run.
-
-✅ Do a little research: Read up on CPUs on the [Wikipedia CPU article](https://wikipedia.org/wiki/Central_processing_unit)
-
-#### Task
-
-Investigate the Wio Terminal.
-
-If you are using a Wio Terminal for these lessons, try to find the CPU. Find the *Hardware Overview* section of the [Wio Terminal product page](https://www.seeedstudio.com/Wio-Terminal-p-4509.html) for a picture of the internals, and try to find the CPU through the clear plastic window on the back.
 
 ### Memory
 
@@ -192,29 +168,19 @@ Arduino provides standard libraries for interacting with microcontrollers and th
 
 There is a large ecosystem of third-party Arduino libraries that allow you to add extra features to your Arduino projects, such as using sensors and actuators or connecting to cloud IoT services.
 
-##### Task
-
-Investigate the Wio Terminal.
-
-If you are using a Wio Terminal for these lessons, re-read the code you wrote in the last lesson. Find the `setup` and `loop` function. Monitor the serial output for the loop function being called repeatedly. Try adding code to the `setup` function to write to the serial port and observe that this code is only called once each time you reboot. Try rebooting your device with the power switch on the side to show this is called each time the device reboots.
-
 ## Deeper dive into single-board computers
 
 In the last lesson, we introduced single-board computers. Let's now look deeper into them.
 
 ### Raspberry Pi
 
-![The Raspberry Pi logo](../../../images/raspberry-pi-logo.png)
+
 
 The [Raspberry Pi Foundation](https://www.raspberrypi.org) is a charity from the UK founded in 2009 to promote the study of computer science, especially at school level. As part of this mission, they developed a single-board computer, called the Raspberry Pi. Raspberry Pis are currently available in 3 variants - a full size version, the smaller Pi Zero, and a compute module that can be built into your final IoT device.
-
-![A Raspberry Pi 4](../../../images/raspberry-pi-4.jpg)
 
 The latest iteration of the full size Raspberry Pi is the Raspberry Pi 4B. This has a quad-core (4 core) CPU running at 1.5GHz, 2, 4, or 8GB of RAM, gigabit ethernet, WiFi, 2 HDMI ports supporting 4k screens, an audio and composite video output port, USB ports (2 USB 2.0, 2 USB 3.0), 40 GPIO pins, a camera connector for a Raspberry Pi camera module, and an SD card slot. All this on a board that is 88mm x 58mm x 19.5mm and is powered by a 3A USB-C power supply. These start at US$35, much cheaper than a PC or Mac.
 
 > 💁 There is also a Pi400 all in one computer with a Pi4 built into a keyboard.
-
-![A Raspberry Pi Zero](../../../images/raspberry-pi-zero.jpg)
 
 The Pi Zero is much smaller, with lower power. It has a single core 1GHz CPU, 512MB of RAM, WiFi (in the Zero W model), a single HDMI port, a micro-USB port, 40 GPIO pins, a camera connector for a Raspberry Pi camera module, and an SD card slot. It measures 65mm x 30mm x 5mm, and draws very little power. The Zero is US$5, with the W version with WiFi US$10.
 
@@ -249,9 +215,7 @@ Single-board computers are used for professional IoT deployments, not just as de
 
 The challenge in the last lesson was to list as many IoT devices as you can that are in your home, school or workplace. For every device in this list, do you think they are built around microcontrollers or single-board computers, or even a mixture of both?
 
-## Post-lecture quiz
 
-[Post-lecture quiz](https://black-meadow-040d15503.1.azurestaticapps.net/quiz/4)
 
 ## Review & Self Study
 
@@ -261,6 +225,3 @@ The challenge in the last lesson was to list as many IoT devices as you can that
 
 ✅ Use these guides, along with the costs shown by following the links in the [hardware guide](../../../hardware.md) to decide on what hardware platform you want to use, or if you would rather use a virtual device.
 
-## Assignment
-
-[Compare and contrast microcontrollers and single-board computers](assignment.md)
