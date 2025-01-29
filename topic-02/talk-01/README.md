@@ -1,6 +1,6 @@
-# Connect your device to the Internet
+# MQTT
 
-## Introduction
+Publish Subscribe · Telemetry · Control · Quality of Service 
 
 The **I** in IoT stands for **Internet** - the cloud connectivity and services that enable a lot of the features of IoT devices, from gathering measurements from the sensors connected to the device, to sending messages to control the actuators. IoT devices typically connect to a single cloud IoT service using a standard communication protocol, and that service is connected to the rest of your IoT application, from AI services to make smart decisions around your data, to web apps for control or reporting.
 
