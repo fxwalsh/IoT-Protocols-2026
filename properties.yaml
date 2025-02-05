@@ -2,7 +2,7 @@
 zoom: https://zoom.us/
 credits: Dr Frank Walsh
 ignorepin : 1213
-auth           : 0
+auth      : 0
 llm       : 2 
 ignore    :
 - topic-000-Assessments
