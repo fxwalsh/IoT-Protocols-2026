@@ -1,3 +1,3 @@
-# Sensors, Actuators and PT
+# 03: Connecting Devices
 
-Sensor Types · IoT in Packet Tracer
+MQTT · Telemetry · Commands
