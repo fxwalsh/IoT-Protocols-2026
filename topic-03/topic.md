@@ -1,3 +1,3 @@
-# 03: Connecting Devices
+Agri 4.0 & Serial Commuunication Protocols
 
-MQTT · Telemetry · Commands
+UART SPI I2C
