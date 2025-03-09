@@ -1,3 +1,2 @@
-Serial Commuunication Protocols
-
-UART SPI I2C
+IoT on the Edge
+Classifiers · Pi Camera · Edge Computing
