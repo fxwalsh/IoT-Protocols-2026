@@ -1,6 +1,6 @@
 # 📌 Assignment Requirements
 
-Each team must **propose, design, and implement** an IoT-based solution that includes:
+Each persteam must **propose, design, and implement** an IoT-based solution that includes:
 
 | **Requirement**                          | **Description**                                              | **Weight** |
 | ---------------------------------------- | ------------------------------------------------------------ | ---------- |

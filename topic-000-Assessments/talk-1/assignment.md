@@ -1,3 +1,3 @@
-# Assignment 2 Specification
+# Assignment Specification
 
 Project · IoT · Communication
