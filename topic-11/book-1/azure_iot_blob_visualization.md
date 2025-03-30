@@ -1,7 +1,9 @@
 
-# 📡 Azure IoT → Blob Storage → Python Visualisation
+# Azure IoT → Blob Storage → Python Visualisation
 
-This guide walks you through sending telemetry from a Python script to Azure IoT Hub, automatically routing it to Blob Storage, and visualizing it using `pandas` and `matplotlib`.
+Sending telemetry from a Python script to Azure IoT Hub.
+
+In this lab you will also automatically routing it to Blob Storage, and visualizing it using `pandas` and `matplotlib`.
 
 ---
 
