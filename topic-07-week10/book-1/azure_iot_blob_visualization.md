@@ -1,4 +1,3 @@
-
 # Azure IoT Storage & Visualisation
 
 Sending telemetry from a Python script to Azure IoT Hub.
