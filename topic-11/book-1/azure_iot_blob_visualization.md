@@ -1,5 +1,5 @@
 
-# Azure IoT → Blob Storage → Python Visualisation
+# Azure IoT, Blob Storage & Python Visualisation
 
 Sending telemetry from a Python script to Azure IoT Hub.
 
@@ -7,7 +7,7 @@ In this lab you will also automatically routing it to Blob Storage, and visualiz
 
 ---
 
-## 🧱 1. Create a Blob Container in Azure
+### 🧱 1. Create a Blob Container in Azure
 
 1. Go to your Azure **Storage Account**
 2. Navigate to **Containers**
@@ -19,7 +19,7 @@ In this lab you will also automatically routing it to Blob Storage, and visualiz
 
 ---
 
-## 🚦 2. Route IoT Hub Telemetry to the Blob
+### 🚦 2. Route IoT Hub Telemetry to the Blob
 
 ### Step A: Get Storage Connection String
 
