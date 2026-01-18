@@ -5,13 +5,18 @@ ignorepin : 1213
 auth      : 0
 llm       : 2 
 ignore    :
-#- topic-000-Assessments
-#- topic-02
-#- topic-03
-# - topic-04
+- topic-000-Assessments
+- topic-02
+- topic-03
+- topic-04
 - topic-05
 - topic-06
 - topic-07
 - topic-08
 - topic-09
-- topic-10  
+- topic-10
+- topic-5-week7
+- topic-7-week10
+- topic-8-week8
+
+
