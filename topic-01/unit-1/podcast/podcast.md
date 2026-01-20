@@ -1,3 +1,3 @@
 IoT Introduction
 
-Notebook LLM generated summary podcast
+A NotebookLM generated summary podcast
