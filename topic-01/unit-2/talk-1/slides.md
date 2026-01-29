@@ -312,12 +312,24 @@ while count < 3:  # Continues until count reaches 3
 ---
 
 # Files
-+ Writing to a file (appending content)
++ reading a file (appending content)
     ```python
     with open("temperature_data.txt", "r") as file:
         content = file.read()
         print(content)
     ```
+
++ Appending
+
+~~~python
+# Open in append+read mode which creates the file if it doesn't exist
+with open("temperature_data.txt", "a+") as file:
+    file.seek(0)  # move to start before reading
+    content = file.read()
+    print(content)
+~~~
+
+
 
 ---
 
@@ -394,7 +406,7 @@ print(f"Pressure: {weather['pressure']} hPa")
 + Use the ``import`` keyword
   ```python
   import math
-
+  
   radius = 5
   area = math.pi * (radius ** 2)
   print(f"Area of circle with radius {radius}: {area}") 
