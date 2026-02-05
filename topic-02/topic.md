@@ -1,3 +1,3 @@
 # 02: Connecting Devices
 
-MQTT · Telemetry · Commands
+Sensors · Actuators · Telemetry
