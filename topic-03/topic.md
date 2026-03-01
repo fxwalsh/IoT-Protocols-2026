@@ -1,3 +1,3 @@
-Agri 4.0 & Serial Commuunication Protocols
+Data Observability Pipeline 
 
 UART SPI I2C
