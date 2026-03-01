@@ -1,3 +1,3 @@
 Data Observability Pipeline 
 
-UART SPI I2C
+Mongo · Gateway · API
