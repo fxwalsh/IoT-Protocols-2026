@@ -1,2 +1,3 @@
-IoT on the Edge
-Classifiers · Pi Camera · Edge Computing
+Bluetooth Low Energy
+
+BLE · GAP · GATT
