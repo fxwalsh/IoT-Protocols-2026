@@ -1,3 +1,3 @@
-# Messaging for IoT
+# 5: IOT Platforms - Blynk
 
-MQTT · Event Driven Architectures
+Blynk · Mobile Apps
