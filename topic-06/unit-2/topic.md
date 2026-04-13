@@ -1,2 +1,0 @@
-# IoT Mobile Apps
-Blynk

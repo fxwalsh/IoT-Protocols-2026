@@ -1,0 +1,36 @@
+flowchart LR
+    subgraph RPi [Raspberry Pi]
+        SENSE[Sense HAT joystick] --> DOORBELL[doorbell_camera.py]
+        CAM[Pi Camera] --> DOORBELL
+
+        DOORBELL --> IMG[Image file: static/last_visitor.jpg]
+        DOORBELL --> STATE[State file: state/doorbell.json]
+    
+        DASH["web_dashboard.py (Flask app)"] --> IMG
+        DASH --> STATE
+    end
+    
+    BROWSER[Student laptop web browser] -->|HTTP| DASH
+
+
+![image-20251124095115527](./img/99/image-20251124095115527.png)
+
+flowchart LR
+    subgraph RPi [Raspberry Pi]
+        SENSE[Sense HAT joystick] --> DOORBELL[doorbell_camera.py]
+        CAM[Pi Camera] --> DOORBELL
+        DOORBELL --> UPLOADER[img_upload.py]
+    end
+
+    UPLOADER -->|upload image| CLOUD[Cloudinary image storage]
+    
+    DOORBELL -->|publish state with URL| MQTT[MQTT broker]
+    
+    subgraph Render [Render platform]
+        DASH[web_dashboard.py]
+    end
+    
+    DASH -->|subscribe to state| MQTT
+    DASH -->|use image URL| CLOUD
+    
+    BROWSER[Student web browser] -->|HTTPS| DASH
